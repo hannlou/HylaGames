@@ -28,7 +28,6 @@
       overflow-x: hidden;
     }
 
-    /* Grain overlay */
     body::before {
       content: '';
       position: fixed;
@@ -65,10 +64,7 @@
       margin-bottom: 0.75rem;
     }
 
-    h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
+    h1 em { font-style: italic; color: var(--accent); }
 
     .subtitle {
       font-size: 0.75rem;
@@ -96,7 +92,6 @@
     .games-list {
       display: flex;
       flex-direction: column;
-      gap: 0;
       border-top: 1px solid var(--border);
     }
 
@@ -110,7 +105,9 @@
       color: inherit;
       transition: background 0.2s, padding 0.2s;
       gap: 1rem;
-      cursor: pointer;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.4s ease forwards;
     }
 
     .game-card:hover {
@@ -121,10 +118,7 @@
       margin-right: -1rem;
     }
 
-    .game-card:hover .arrow {
-      transform: translateX(4px);
-      color: var(--accent);
-    }
+    .game-card:hover .arrow { transform: translateX(4px); color: var(--accent); }
 
     .game-left {
       display: flex;
@@ -134,13 +128,7 @@
       min-width: 0;
     }
 
-    .game-num {
-      font-size: 0.6rem;
-      color: var(--accent-dim);
-      letter-spacing: 0.1em;
-      flex-shrink: 0;
-      width: 1.5rem;
-    }
+    .game-num { font-size: 0.6rem; color: var(--accent-dim); letter-spacing: 0.1em; flex-shrink: 0; width: 1.5rem; }
 
     .game-title {
       font-family: 'Playfair Display', serif;
@@ -151,52 +139,33 @@
       text-overflow: ellipsis;
     }
 
-    .game-meta {
-      font-size: 0.6rem;
-      color: var(--text-muted);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      flex-shrink: 0;
-    }
-
-    .arrow {
-      font-size: 1rem;
-      color: var(--text-muted);
-      transition: transform 0.2s, color 0.2s;
-      flex-shrink: 0;
-    }
+    .game-meta { font-size: 0.6rem; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; flex-shrink: 0; }
+    .arrow { font-size: 1rem; color: var(--text-muted); transition: transform 0.2s, color 0.2s; flex-shrink: 0; }
 
     footer {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.6rem;
-      color: var(--text-muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      position: relative; z-index: 1; text-align: center;
+      padding: 2rem; font-size: 0.6rem; color: var(--text-muted);
+      letter-spacing: 0.1em; text-transform: uppercase;
     }
 
-    /* Staggered entrance animation */
-    .game-card {
-      opacity: 0;
-      transform: translateY(12px);
-      animation: fadeUp 0.4s ease forwards;
-    }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .game-card:nth-child(1)  { animation-delay: 0.05s; }
-    .game-card:nth-child(2)  { animation-delay: 0.10s; }
-    .game-card:nth-child(3)  { animation-delay: 0.15s; }
-    .game-card:nth-child(4)  { animation-delay: 0.20s; }
-    .game-card:nth-child(5)  { animation-delay: 0.25s; }
-    .game-card:nth-child(6)  { animation-delay: 0.30s; }
-    .game-card:nth-child(7)  { animation-delay: 0.35s; }
-    .game-card:nth-child(8)  { animation-delay: 0.40s; }
-    .game-card:nth-child(9)  { animation-delay: 0.45s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .game-card:nth-child(1)  { animation-delay: 0.03s; }
+    .game-card:nth-child(2)  { animation-delay: 0.06s; }
+    .game-card:nth-child(3)  { animation-delay: 0.09s; }
+    .game-card:nth-child(4)  { animation-delay: 0.12s; }
+    .game-card:nth-child(5)  { animation-delay: 0.15s; }
+    .game-card:nth-child(6)  { animation-delay: 0.18s; }
+    .game-card:nth-child(7)  { animation-delay: 0.21s; }
+    .game-card:nth-child(8)  { animation-delay: 0.24s; }
+    .game-card:nth-child(9)  { animation-delay: 0.27s; }
+    .game-card:nth-child(10) { animation-delay: 0.30s; }
+    .game-card:nth-child(11) { animation-delay: 0.33s; }
+    .game-card:nth-child(12) { animation-delay: 0.36s; }
+    .game-card:nth-child(13) { animation-delay: 0.39s; }
+    .game-card:nth-child(14) { animation-delay: 0.42s; }
+    .game-card:nth-child(15) { animation-delay: 0.45s; }
+    .game-card:nth-child(16) { animation-delay: 0.48s; }
+    .game-card:nth-child(17) { animation-delay: 0.51s; }
 
     @media (max-width: 480px) {
       .game-meta { display: none; }
@@ -213,89 +182,92 @@
 </header>
 
 <main>
-  <p class="count">09 stories</p>
-
+  <p class="count">17 stories</p>
   <div class="games-list">
 
-    <a class="game-card" href="https://hannlou.github.io/HylaGames/Audrey%20Art%20project%20_1.html" target="_blank">
-      <div class="game-left">
-        <span class="game-num">01</span>
-        <span class="game-title">Audrey — Art Project</span>
-      </div>
-      <span class="game-meta">Interactive Story</span>
-      <span class="arrow">→</span>
+    <a class="game-card" href="Audrey%20Art%20project%20_1.html" target="_blank">
+      <div class="game-left"><span class="game-num">01</span><span class="game-title">Audrey — Art Project</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
     </a>
 
-    <a class="game-card" href="https://hannlou.github.io/HylaGames/Bill%20Untitled%20Story%20(1).html" target="_blank">
-      <div class="game-left">
-        <span class="game-num">02</span>
-        <span class="game-title">Bill — Untitled Story</span>
-      </div>
-      <span class="game-meta">Interactive Story</span>
-      <span class="arrow">→</span>
+    <a class="game-card" href="Avery%20party%20copy.html" target="_blank">
+      <div class="game-left"><span class="game-num">02</span><span class="game-title">Avery — Party</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
     </a>
 
-    <a class="game-card" href="https://hannlou.github.io/HylaGames/Chris%20a.html" target="_blank">
-      <div class="game-left">
-        <span class="game-num">03</span>
-        <span class="game-title">Chris</span>
-      </div>
-      <span class="game-meta">Interactive Story</span>
-      <span class="arrow">→</span>
+    <a class="game-card" href="Bill%20Untitled%20Story%20(1).html" target="_blank">
+      <div class="game-left"><span class="game-num">03</span><span class="game-title">Bill — Untitled Story</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
     </a>
 
-    <a class="game-card" href="https://hannlou.github.io/HylaGames/Freja%20Sleepover.html" target="_blank">
-      <div class="game-left">
-        <span class="game-num">04</span>
-        <span class="game-title">Freja — Sleepover</span>
-      </div>
-      <span class="game-meta">Interactive Story</span>
-      <span class="arrow">→</span>
+    <a class="game-card" href="Chris%20a.html" target="_blank">
+      <div class="game-left"><span class="game-num">04</span><span class="game-title">Chris</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
     </a>
 
-    <a class="game-card" href="https://hannlou.github.io/HylaGames/MK%20football%20story.html" target="_blank">
-      <div class="game-left">
-        <span class="game-num">05</span>
-        <span class="game-title">MK — Football Story</span>
-      </div>
-      <span class="game-meta">Interactive Story</span>
-      <span class="arrow">→</span>
+    <a class="game-card" href="Chris%20A%20Game.html" target="_blank">
+      <div class="game-left"><span class="game-num">05</span><span class="game-title">Chris — A Game</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
     </a>
 
-    <a class="game-card" href="https://hannlou.github.io/HylaGames/Sam%20final%20final%20project%20_24%20Songs_%20%20______%20(1).html" target="_blank">
-      <div class="game-left">
-        <span class="game-num">06</span>
-        <span class="game-title">Sam — 24 Songs</span>
-      </div>
-      <span class="game-meta">Interactive Story</span>
-      <span class="arrow">→</span>
+    <a class="game-card" href="Elliot%20cat%20life.html" target="_blank">
+      <div class="game-left"><span class="game-num">06</span><span class="game-title">Elliot — Cat Life</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
     </a>
 
-    <a class="game-card" href="https://hannlou.github.io/HylaGames/Toby%20Art%20one.html" target="_blank">
-      <div class="game-left">
-        <span class="game-num">07</span>
-        <span class="game-title">Toby — Art One</span>
-      </div>
-      <span class="game-meta">Interactive Story</span>
-      <span class="arrow">→</span>
+    <a class="game-card" href="Freja%20Sleepover.html" target="_blank">
+      <div class="game-left"><span class="game-num">07</span><span class="game-title">Freja — Sleepover</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
     </a>
 
-    <a class="game-card" href="https://hannlou.github.io/HylaGames/William%20My%20Day%20At%20Home.html" target="_blank">
-      <div class="game-left">
-        <span class="game-num">08</span>
-        <span class="game-title">William — My Day At Home</span>
-      </div>
-      <span class="game-meta">Interactive Story</span>
-      <span class="arrow">→</span>
+    <a class="game-card" href="Hazel%20EGG%20copy.html" target="_blank">
+      <div class="game-left"><span class="game-num">08</span><span class="game-title">Hazel — EGG</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
     </a>
 
-    <a class="game-card" href="https://hannlou.github.io/HylaGames/Zuna_.html" target="_blank">
-      <div class="game-left">
-        <span class="game-num">09</span>
-        <span class="game-title">Zuna</span>
-      </div>
-      <span class="game-meta">Interactive Story</span>
-      <span class="arrow">→</span>
+    <a class="game-card" href="Lily%20Project%201%20copy.html" target="_blank">
+      <div class="game-left"><span class="game-num">09</span><span class="game-title">Lily — Project 1</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
+    </a>
+
+    <a class="game-card" href="MK%20football%20story.html" target="_blank">
+      <div class="game-left"><span class="game-num">10</span><span class="game-title">MK — Football Story</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
+    </a>
+
+    <a class="game-card" href="Sam%20final%20final%20project%20_24%20Songs_%20%20______%20(1).html" target="_blank">
+      <div class="game-left"><span class="game-num">11</span><span class="game-title">Sam — 24 Songs</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
+    </a>
+
+    <a class="game-card" href="Toby%20Art%20one.html" target="_blank">
+      <div class="game-left"><span class="game-num">12</span><span class="game-title">Toby — Art One</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
+    </a>
+
+    <a class="game-card" href="Tripp%20Soccer%20copy.html" target="_blank">
+      <div class="game-left"><span class="game-num">13</span><span class="game-title">Tripp — Soccer</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
+    </a>
+
+    <a class="game-card" href="Vita%20a%20day%20at%20the%20barn%20(1)%20copy.html" target="_blank">
+      <div class="game-left"><span class="game-num">14</span><span class="game-title">Vita — A Day at the Barn</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
+    </a>
+
+    <a class="game-card" href="William%20My%20Day%20At%20Home.html" target="_blank">
+      <div class="game-left"><span class="game-num">15</span><span class="game-title">William — My Day At Home</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
+    </a>
+
+    <a class="game-card" href="Zuna_.html" target="_blank">
+      <div class="game-left"><span class="game-num">16</span><span class="game-title">Zuna</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
+    </a>
+
+    <a class="game-card" href="Zuna_%20copy.html" target="_blank">
+      <div class="game-left"><span class="game-num">17</span><span class="game-title">Zuna (2)</span></div>
+      <span class="game-meta">Interactive Story</span><span class="arrow">→</span>
     </a>
 
   </div>
